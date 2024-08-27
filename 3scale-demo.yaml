@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-demo-3scale
+spec:
+  destination:
+    namespace: threescale
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: /
+    repoURL: https://github.com/adregis/api-demo-3scale
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  sync:
+    comparedTo:
+      destination:
+        namespace: threescale
+        server: https://kubernetes.default.svc
+      source:
+        path: /
+        repoURL: https://github.com/adregis/api-demo-3scale
+        targetRevision: main
