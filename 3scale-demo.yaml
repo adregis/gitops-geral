@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: /
+    path: api01/
     repoURL: https://github.com/adregis/api-demo-3scale
     targetRevision: main
   syncPolicy:
@@ -23,6 +23,6 @@ spec:
         namespace: threescale
         server: https://kubernetes.default.svc
       source:
-        path: /
+        path: api01/
         repoURL: https://github.com/adregis/api-demo-3scale
         targetRevision: main
